@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="CareerNexus" />
+    <meta name="application-name" content="CareerNexus" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <title>CareerNexus | College Placement Portal</title>
+    <meta name="description" content="A comprehensive college placement portal for students, companies, and administration." />
+    <meta property="og:title" content="CareerNexus | College Placement Portal" />
+    <meta property="og:description" content="A comprehensive college placement portal for students, companies, and administration." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      // Filter out benign Vite HMR websocket reconnection notices in iframe sandbox preview
+      (() => {
+        const isBenignViteMsg = (msg) => {
+          if (!msg) return false;
+          const text = typeof msg === 'string' ? msg : (msg.message || '');
+          return text.includes('[vite]') && (
+            text.includes('failed to connect to websocket') ||
+            text.includes('connecting...') ||
+            text.includes('server restarted') ||
+            text.includes('connected')
+          );
+        };
+        const origWarn = console.warn;
+        console.warn = function(...args) {
+          if (args.some(isBenignViteMsg)) return;
+          origWarn.apply(console, args);
+        };
+        const origError = console.error;
+        console.error = function(...args) {
+          if (args.some(isBenignViteMsg)) return;
+          origError.apply(console, args);
+        };
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root" class="min-h-screen w-full"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

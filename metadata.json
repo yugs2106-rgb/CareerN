@@ -1,0 +1,6 @@
+{
+  "name": "CareerNexus",
+  "description": "A comprehensive college placement portal for students, companies, and administration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
